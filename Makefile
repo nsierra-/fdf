@@ -16,10 +16,14 @@ INC_FILES	=	fdf.h
 
 SRC_FILES	=	main.c \
 				load_map.c \
-				render.c
+				render.c \
+				handle_key_event.c \
+				handle_mouse_event.c \
+				free_map.c
 
 FTLST_DIR	=	./ftlst
 LIBFT_DIR	=	./libft
+MLX_DIR		=	minilibx
 
 SRC			=	$(addprefix src/, $(SRC_FILES))
 INC			=	$(addprefix inc/, $(INC_FILES))
@@ -29,8 +33,8 @@ CC			=	gcc
 MAKE		=	make
 
 CFLAGS		=	-Wall -Wextra -Werror -pedantic
-IFLAGS		=	-I./inc/ -I$(LIBFT_DIR) -I$(FTLST_DIR)
-LDFLAGS		=	-L$(LIBFT_DIR) -lft -L$(FTLST_DIR) -lftlst
+IFLAGS		=	-I./inc/ -I$(LIBFT_DIR) -I$(FTLST_DIR) -I$(MLX_DIR)
+LDFLAGS		=	-L$(LIBFT_DIR) -lft -L$(FTLST_DIR) -lftlst -L$(MLX_DIR) -lmlx -framework OpenGL -framework AppKit
 
 $(NAME):		subm $(INC) $(OBJ)
 				$(MAKE) -C ftlst/

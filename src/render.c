@@ -1,4 +1,5 @@
 #include "fdf.h"
+#include "libft.h"
 #include <stdio.h>
 
 int			render(t_data *data)
@@ -12,7 +13,7 @@ int			render(t_data *data)
 		w = 0;
 		while (w < data->w)
 		{
-			printf("%d", data->map[h][w]);
+			printf("%d ", data->map[h][w]);
 			++w;
 		}
 		printf("\n");
